@@ -1,0 +1,75 @@
+
+<div class="conatainer">
+    <div style="margin-top: 10px;">
+        <!-- <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Ram" #input>
+      </mat-form-field> -->
+
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="scheduleId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Schedule Id </th>
+                    <td mat-cell *matCellDef="let row"> {{row.scheduleId}} </td>
+                </ng-container>
+
+                <!-- Gender Column -->
+                <ng-container matColumnDef="flight.flightNumber">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Flight Name </th>
+                    <td mat-cell *matCellDef="let row"> {{row.flight.flightNumber}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="flight.company.companyName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+                    <td mat-cell *matCellDef="let row"> {{row.flight.company.companyName}} </td>
+                </ng-container>
+
+                <!-- citizenType Column -->
+                <ng-container matColumnDef="fromCity.cityName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> From City </th>
+                    <td mat-cell *matCellDef="let row"> {{row.fromCity.cityName}} </td>
+                </ng-container>
+
+                <!-- Age Column -->
+                <ng-container matColumnDef="toCity.cityName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> To City </th>
+                    <td mat-cell *matCellDef="let row"> {{row.toCity.cityName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="depatureTime">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure </th>
+                    <td mat-cell *matCellDef="let row"> {{row.depatureTime}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="arrivalTime">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival Time </th>
+                    <td mat-cell *matCellDef="let row"> {{row.arrivalTime}} </td>
+                </ng-container>
+
+                 <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Book </th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-raised-button color="primary" (click)="bookTicket(row)">book ticket</button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <!-- <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching"{{input.value}}"</td>
+                </tr> -->
+            </table>
+
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+
+    </div>
+</div>
+<!-- <mat-chip-list aria-label="Fish selection">
+<mat-chip color="accent" selected>Accent fish</mat-chip>
+</mat-chip-list> -->

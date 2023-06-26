@@ -1,0 +1,52 @@
+<html>
+<body>
+<div class="container">
+<div class="row align-items-stretch no-gutters contact-wrap">
+<div class="col-md-12">
+<div class="form h-100">
+	<h3>Complaints Submitted</h3>
+	<div class="row">
+		<div class="col-lg-6 mb-4" *ngFor="let c of complaints">
+			<div class="card " >
+				<div class="card-body pt-0">
+					<div class="widget-49">
+						<div class="widget-49-title-wrapper">
+							<div class="widget-49-meeting-info">
+								<span class="text-muted">Complain Description</span> <br>
+								<span class="widget-49-pro-title">{{c.complaintDescription}}</span>
+							</div>
+						</div>
+						<ul class="widget-49-meeting-points">
+							<li class="widget-49-meeting-item"><span class="text-muted">Complaint Registered Date : </span><span>{{c.dateOfComplaintRegister}}</span></li>
+							<li class="widget-49-meeting-item"><span class="text-muted">Flight Number : </span><span>{{c.booking.schedule.flight.flightNumber}}</span></li>
+							<li class="widget-49-meeting-item"><span class="text-muted">Ticket Number : </span><span>{{c.booking.ticketNumber}}</span></li>
+						</ul>
+						<div class="row">
+							<div class="col-md-12 form-group mb-3">
+								<label for="message" class="text-muted">Reply</label>
+								<textarea class="form-control" id="details" name="details" cols="30" rows="4"  placeholder="Write your message" [(ngModel)]="c.adminComplaintReply"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-5 mb-2">
+							<button type="button" class="btn btn-primary btn-lg" (click)="sendReply(c.adminComplaintReply,c.complaintId,c.complaintStatus=true)">Resolved</button>
+							<button type="button" class="btn btn-secondary btn-lg" (click)="sendReply(c.adminComplaintReply,c.complaintId,c.complaintStatus=false)">Not resolved</button>
+						</div>								
+					</div>
+				</div>                      
+			</div>
+		</div>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+

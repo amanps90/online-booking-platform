@@ -1,0 +1,52 @@
+<div class=" container border border-dark feedbackBox bg-opacity-25 w-50 mx-auto my-5 p-5 ">
+
+    <form [formGroup]="feedbackForm">
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Textarea</mat-label>
+            <textarea formControlName="complaintDescription" matInput></textarea>
+          </mat-form-field> -->
+          <div>
+            <h2>Please give your valuable Feedback </h2>
+            <small>so that we can improve</small>
+          </div>
+          
+            <div class="container ">
+              <h4>How was the food ?</h4>
+              <ngb-rating [max]="5" [(rate)]="food" [readonly]="false" formControlName="food"></ngb-rating>
+              <p><small >Rate: {{food}}</small></p>
+            </div>
+          
+            <div class="container " >
+              <h4>How was the Hospitability ?</h4>
+              <ngb-rating [max]="5" [(rate)]="sanitization" [readonly]="false" formControlName="hospitality"></ngb-rating>
+             <p><small >Rate: {{hospitality}}</small></p>
+            </div>
+          
+            <div class="container">
+              <h4>How was the sanitization ?</h4>
+              <ngb-rating [max]="5" [(rate)]="hospitality" [readonly]="false" formControlName="sanitization"></ngb-rating>
+              <p><small >Rate: {{sanitization}}</small></p>
+            </div>
+          
+            <div class="container">
+              <h4> Was the flight on time ?</h4>
+              <ngb-rating [max]="5" [(rate)]="timing" [readonly]="false"  formControlName="timing"></ngb-rating>
+              <p><small>Rate: {{timing}}</small></p>
+            </div>
+          
+            <!-- <div class="container">
+              
+              <button type="button" class="btn btn-outline-info">Submit</button>
+            </div> -->
+            
+      
+            <div mat-dialog-action [align]="'end'">
+              <button class="btn btn-outline-danger" mat-dialog-close>Close</button>
+              <button type="button" class="btn btn-outline-info" (click)="addFeedback()" >Submit</button>
+            </div>
+
+
+    </form>
+    
+
+</div>

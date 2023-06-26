@@ -1,0 +1,69 @@
+<nav *ngIf="! loggedUser.admin" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">skyheights</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="bookingList">Booked Tickets</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="adminHome">Profile</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="editProfile">Edit Profile</a>
+        </li>
+
+      </ul>
+      <div class="d-flex">
+        <a *ngIf="! isLoggedIn" class="btn btn-outline-info me-2" routerLink="signin">Login</a>
+        <a *ngIf=" isLoggedIn" class="btn btn-outline-info me-2" (click)="logout()" >Logout</a>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<nav *ngIf="loggedUser.admin" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">skyheights Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="adminHome">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="bookingList">Booked Tickets</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="adminComplaints">Complaints For Admin</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blockedUsers">Blocked Users</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="bookingList">booking list For Complaint</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a *ngIf="! isLoggedIn" class="btn btn-outline-info me-2" routerLink="signin">Login</a>
+        <a *ngIf=" isLoggedIn" class="btn btn-outline-info me-2" (click)="logout()" >Logout</a>
+    </div>
+    </div>
+  </div>
+</nav>

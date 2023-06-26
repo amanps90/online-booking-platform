@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Prices</h1>
+<div mat-dialog-content>
+    <form [formGroup]="priceForm">
+<mat-form-field appearance="outline">
+    <mat-label>Economy Class</mat-label>
+    <input formControlName="economyPrice" matInput type="number" placeholder="Price of Economy Class">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Business Class</mat-label>
+    <input formControlName="businessPrice" matInput type="number" placeholder="Price of Business Class">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Premium Class</mat-label>
+    <input formControlName="premiumPrice" matInput type="number" placeholder="Price of Premium Class">
+</mat-form-field>
+</form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" style="margin-left: 8px;" (click)="addPrice()">{{actionBtn}}</button>
+
+</div>

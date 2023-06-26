@@ -1,0 +1,14 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-card {
+    border-radius: 50px;
+    margin: 0.5%;
+    max-width: 400px;
+    font-family: 'Arial Narrow Bold';
+    font-style: italic;
+    // box-shadow: 5px 10px;
+    background-color: #fce4e4;
+    // background:linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  }

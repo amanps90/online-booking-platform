@@ -1,0 +1,83 @@
+
+<div class="container border border-dark searchBox bg-opacity-25 w-75 mx-auto my-5 p-5">
+    <form [formGroup]="searchFlightForm" (ngSubmit)="searchFlight()" class="row g-3">
+        <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">from</label>
+        <input type="text" class="form-control" id="validationCustom01" placeholder="from city" formControlName="fromCity">
+        <div class="invalid-feedback">
+            please give source
+        </div>
+        </div>
+        <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">to</label>
+        <input type="text" class="form-control" id="validationCustom02" placeholder="to city" formControlName="toCity">
+        <div class="invalid-feedback">
+            please choose destination
+        </div>
+        </div>
+        <div class="col-md-3">
+        <label for="validationCustomUsername" class="form-label">Date of journey</label>
+        <div class="input-group has-validation">
+            <input type="date" class="form-control" id="validationCustomUsername" formControlName="doj">
+            <div class="invalid-feedback">
+            Please choose a date.
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <label for="validationCustom03" class="form-label">Number of Travellers</label>
+        <input type="number" class="form-control" id="validationCustom03" size="10" required>
+        <div class="invalid-feedback">
+            Please enter number of travellers.
+        </div>
+        </div>
+        <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Class</label>
+        <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Economy</option>
+            <option>Premium</option>
+            <option>Business</option>
+        </select>
+        <div class="invalid-feedback">
+            Please select a travelling class.
+        </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Category</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Senior Citizen</option>
+                <option>Student</option>
+                <option>Defense</option>
+                <option>Adult</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a category.
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="" id="invalidCheck1" name="trip" required>
+                <label class="form-check-label" for="invalidCheck">
+                one way
+                </label>
+            </div>
+            <div class="form-check">    
+                <input class="form-check-input" type="radio" value="" id="invalidCheck1" name="trip" required>
+                <label class="form-check-label" for="invalidCheck">
+                    round trip
+                </label>
+                <div class="invalid-feedback">
+                    You must select any.
+                </div>
+            </div>    
+         
+        </div>
+        <div class="col-12">
+        <button class="btn btn-primary" type="submit">Search</button>
+        <button class="btn btn-primary mx-2" type="reset">Reset</button>
+        </div>
+    </form>
+</div>

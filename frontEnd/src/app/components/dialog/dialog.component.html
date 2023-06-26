@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Add Passenger</h1>
+<div mat-dialog-content>
+  <form [formGroup]="bookingForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Passenger Name</mat-label>
+      <input formControlName="passengerName" matInput placeholder="Enter Passenger Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender" placeholder="Gender">
+        <mat-option value="Male">MALE</mat-option>
+        <mat-option value="Female">FEMALE</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label for="">
+      <h1> CitizenType </h1>
+    </label>
+    <mat-radio-group formControlName="citizenType" class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let citizen of citizenTypeList" [value]="citizen">
+        {{citizen}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Class</mat-label>
+      <mat-select formControlName="class" placeholder="Select Class...">
+        <mat-option value="Economy">Economy</mat-option>
+        <mat-option value="Business">Business</mat-option>
+        <mat-option value="Premium">Premium</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <input formControlName="age" matInput type="number" placeholder="Enter Age">
+    </mat-form-field>
+  </form>
+
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addPassenger()">{{actionBtn}}</button>
+</div>

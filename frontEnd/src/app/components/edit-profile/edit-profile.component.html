@@ -1,0 +1,139 @@
+
+
+<html>
+    <head>
+    <meta charset="ISO-8859-1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <!-- <link href="css/navStyles.css" rel="stylesheet"> -->
+        
+    
+    </head>
+    <body>
+        <div class="row" style="padding-left: 15px; padding-right: 15px;" >
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center outline-primary"
+                        style="background: linear-gradient(to top, #f8f8f8 0%,  #c1e0ee  100%);">
+                        <img src="" alt="avatar"
+                            class="rounded-circle img-fluid" style="width: 150px;" id="profilepic">
+                        <h5 class="my-3" id="uname"></h5>
+                        <p class="text-muted mb-1" id="address"></p>
+                        <div class="d-flex justify-content-center mb-2">
+    
+                            <button type="button" style="margin-left: 10px;" class="btn btn-primary" data-toggle="modal"
+                                data-target="#myModal">Edit
+                                Profile</button>
+                            <!-- <button type="button" style="margin-left: 20px;" class="btn btn-danger" data-toggle="modal" data-target="#passwordModal">Edit
+                      Password</button> -->
+    
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <!--User Information-->
+                <div class="card mb-4 mb-lg-0" >
+                    <div class="card-body p-0" >
+                        <ul class="list-group list-group-flush rounded-3">
+    
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+    
+                                <p class="mb-0">Fullname : </p>
+                                <p class="mb-0 text-muted" id="fname">{{profile.userName}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+    
+                                <p class="mb-0">Gender : </p>
+                                <p class="mb-0 text-muted" id="email">{{profile.gender}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+    
+                                <p class="mb-0">Email : </p>
+                                <p class="mb-0 text-muted" id="email">{{profile.userEmail}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+    
+                                <p class="mb-0">Contact No : </p>
+                                <p class="mb-0 text-muted" id="cno">{{profile.userContact}}</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+    
+                                <p class="mb-0">Account created : </p>
+                                <p class="mb-0 text-muted" id="email">{{profile.accountCreationDate}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!--Welcome Message-->
+            <div class="col-lg-8">
+                <div class="jumbotron" style="background: linear-gradient(to top, #f8f8f8 0%,  #c1e0ee  100%);">
+                    <h1 class="display-4">Welcome, <span id="message"> </span></h1>
+                    <p class="lead">We are glad you have decided to join us.We want to make your experience free of worry.
+                        Feel free to send us an email if you have any questions at any point in time.</p>
+                    <hr class="my-4">
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="" role="button">Learn more</a>
+                    </p>
+                </div>
+            </div>
+    
+            <!--Update Information-->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="editprofile" id="editDetails">
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Full Name:</label>
+                                    <input name="fullname" type="text" class="form-control" id="fullName" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Contact No :</label>
+                                    <input name="contact" type="text" class="form-control" id="Contact no"  value="" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Gender:</label>
+                                    <input name="gender" type="text" class="form-control" id="userAddress" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Password:</label>
+                                    <input name="password" type="password" class="form-control" id="password" value="" required>
+                                </div>
+    
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Submit" class="btn btn-primary" id="submitDetails"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+html {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+/*# sourceMappingURL=styles.css.map */

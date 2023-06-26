@@ -1,0 +1,92 @@
+<div class="container">
+  <div style="margin-top: 10px;">
+    <div class="col-lg-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Departure Time</mat-label>
+        <mat-select  placeholder="--Select--" (selectionChange)="onChange($event)">
+            <mat-option value="morning">Morning</mat-option>
+            <mat-option value="afternoon">Afternoon</mat-option>
+            <mat-option value="evening">Evening</mat-option>
+            <mat-option value="night">Night</mat-option>
+            
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip color="info" selected style="margin-left: 20%;">Economy Class :{{currentFlight.economyPrice}}</mat-chip>
+ 
+  <mat-chip color="primary" selected>Business Class : {{currentFlight.businessPrice}}</mat-chip>
+  <mat-chip color="accent" selected>Premium Class : {{currentFlight.premiumPrice}}</mat-chip>
+  <button mat-raised-button color="warn" style="margin-left: 20%; " (click)="editPrice()">Edit Price</button>
+</mat-chip-list>
+
+<br>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="scheduleId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Schedule ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.scheduleId}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="fromCity.cityName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> From</th>
+      <td mat-cell *matCellDef="let row"> {{row.fromCity.cityName}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="toCity.cityName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> To</th>
+      <td mat-cell *matCellDef="let row"> {{row.toCity.cityName}} </td>
+    </ng-container>
+
+    <!-- Fruit Column -->
+    <ng-container matColumnDef="depatureDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure Date</th>
+      <td mat-cell *matCellDef="let row"> {{row.depatureDate | date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="depatureTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure Time </th>
+      <td mat-cell *matCellDef="let row"> {{row.depatureTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="arrivalDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Arrival Date </th>
+      <td mat-cell *matCellDef="let row"> {{row.arrivalDate | date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="arrivalTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival Time </th>
+      <td mat-cell *matCellDef="let row"> {{row.arrivalTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let row"> 
+        <button mat-icon-button color="primary" (click)="editSchedule(row)">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteSchedule(row.scheduleId)" >
+          <mat-icon>delete</mat-icon>
+      </button>   
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  <button mat-raised-button color="warn" style="margin-left: 10px; margin-bottom: 10px;" (click)="openSchedule()">Add New Schedule</button>
+</div>
+</div>
+
+</div>

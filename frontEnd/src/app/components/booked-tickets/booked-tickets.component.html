@@ -1,0 +1,14 @@
+
+<mat-card class="example-card" *ngFor="let passenger of confirmPassengers">
+    <mat-card-title>{{passenger.passengerName}} <span style="float: right;"><mat-icon>clear</mat-icon></span></mat-card-title>
+    <mat-card-content>
+        <br>
+        <p>Age: {{passenger.age}} <span style="margin: 10px;">Citizen Type:{{passenger.citizenType}} <span style="margin: 10px;">Gender:{{passenger.gender}} </span></span></p>
+        <h2>Flight Number:{{currentBooking.schedule.flight.flightNumber}} </h2>
+        <h2>Source : {{currentBooking.schedule.fromCity.cityName}}</h2>
+        <span>
+            <h2> Destination : {{currentBooking.schedule.toCity.cityName}}</h2>
+        </span>
+        <h2>Date: {{currentBooking.schedule.depatureDate}}</h2>
+    </mat-card-content>
+</mat-card>
